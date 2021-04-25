@@ -19,7 +19,7 @@ $ pip install -r requirements.txt
 
 # Cron example
 ```
-0 0 */1 * * tiller_host=$(kubectl get ep -n kube-system | grep tiller-deploy | awk '{print $2}' | awk -F":" '{print $1}'); python /root/helm-cleaner.py --hostname $tiller_host --purge >> helm-cleaner.log
+0 0 */1 * * tiller_host=$(kubectl get ep -n kube-system | grep tiller-deploy | awk '{print $2}' | awk -F":" '{print $1}'); python ./helm-cleaner.py --hostname $tiller_host --purge >> helm-cleaner.log
 ```
 "0 0 */1 * *" - run everyday  
 "kubectl get ep -n kube-system" - get all endpoints in kube-system namespace  
